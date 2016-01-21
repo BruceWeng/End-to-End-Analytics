@@ -1,0 +1,38 @@
+{
+  "name": "n2n-analytics",
+  "version": "0.0.1",
+  "description": "End to End Analytics App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "Bruce Weng",
+  "license": "ISC",
+  "engines": {
+    "node": "~4.2.4"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "ejs": "^2.3.4",
+    "express": "~3.1.0",
+    "moment": "^2.11.1",
+    "mongoose": "^4.3.6",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "charlatan": "^1.0.0",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-compass": "^1.0.4",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+
+  "scripts": {
+    "start": "nodemon server.js -w routes"
+  }
+}
