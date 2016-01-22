@@ -3,6 +3,7 @@ var path = require('path');
 var http = require('http');
 var routes = require('./routes');
 var user = require('./routes/user');
+var mongoose = require('mongoose');
 
 var app = express();
 
@@ -21,6 +22,22 @@ app.configure(function() {
 app.get('/', routes.index);
 // app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function() {
-  console.log("Express server listening on port " + app.get('port'));
+// Connect to mongo and then start server
+function connectToMongo(callback) {
+
+  mongoose.connect('mongodb://localhost/analytics');
+  mongoose.connection.on('open', function() {
+
+    console.log('Connected to mongodb://localhost/analytics');
+    callback();
+  });
+}
+
+connectToMongo(function() {
+
+  app.listen(app.get('port'), function() {
+
+    console.log("Express server listening on port " + app.get('port'));
+  });
 });
+
