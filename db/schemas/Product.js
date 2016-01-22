@@ -4,7 +4,7 @@ module.exports = new mongoose.Schema({
 
   name: String,
   description: String,
-  manufacturer: { type: 'ObjectId', ref: 'Company'}
+  manufacturer: { type: 'ObjectId', ref: 'Company'},
 
   color: String,
   releaseDate: Date,
